@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadatos del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título de la página -->
+    <title>Ghost Alone17 - Mods</title>
+
+    <!-- Estilos CSS -->
+    <style>
+        /* Enlace a la fuente de Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        /* Aplicar la fuente a h1 */
+        h1 {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #333, #ccc, #333);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            background-size: 200% 100%;
+            animation: slideBar 2s infinite linear;
+        }
+
+        /* Definición de la animación */
+        @keyframes slideBar {
+            0% {
+                background-position: 100% 0;
+            }
+            100% {
+                background-position: -100% 0;
+            }
+        }
+
+        /* Otros estilos opcionales */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        p {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 18px;
+        }
+
+        /* Estilos específicos para el segundo párrafo */
+        .moved-paragraph {
+            position: absolute;
+            top: -100px;
+            left: 333px;
+            color: black;
+            font-family: 'Helvetica', sans-serif;
+        }
+
+        /* Estilo del enlace como botón */
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+            position: absolute;
+            top: 200px;
+            left: 50px;
+        }
+
+        /* Cambia el color de fondo al pasar el ratón */
+        a.button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Estilos para los apartados TTT y BT3 */
+        .ttt-section,
+        .bt3-section {
+            padding: 20px;
+            text-align: center;
+            margin: 20px;
+        }
+
+        /* Estilo del botón para cada sección */
+        .section-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #27ae60;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        /* Cambia el color de fondo al pasar el ratón */
+        .section-button:hover {
+            background-color: #218c54;
+        }
+
+        /* Estilo para la descripción del sitio con fondo */
+        .site-description {
+            background-color: #CD5C5C; /* Cambia el color del fondo según tu preferencia */
+            padding: 15px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado principal -->
+    <h1>Ghost Alone17</h1>
+
+    <!-- Apartado TTT -->
+<div class="ttt-section">
+    <h2>Mods para Dragon Ball Z: Tenkaichi Tag Team (TTT)</h2>
+    <p>Aquí encontrarás mods para el juego Dragon Ball Z: Tenkaichi Tag Team.</p>
+    <!-- Enlace para TTT -->
+    <a href="{{ url_for('enlace_ttt') }}" class="section-button">Ver mods de TTT</a>
+</div>
+
+<!-- Apartado BT3 -->
+    <div class="bt3-section">
+    <h2>Mods para Dragon Ball Z: Budokai Tenkaichi 3 (BT3)</h2>
+    <p>Explora los mods disponibles para el juego Dragon Ball Z: Budokai Tenkaichi 3.</p>
+    <!-- Enlace para BT3 -->
+    <a href="{{ url_for('enlace_bt3') }}" class="section-button">Ver mods de BT3</a>
+    </div>
+
+    <!-- Descripción del sitio con fondo -->
+    <p class="site-description">Descripción del sitio:</p>
+</body>
+</html>

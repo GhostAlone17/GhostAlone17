@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Metadatos del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título de la página -->
+    <title>Mods TTT - Ghost Alone17</title>
+
+    <!-- Estilos adicionales para la animación del encabezado y botones -->
+    <style>
+        /* Fondo principal */
+        body {
+            background-color: #f2f2f2; /* Un tono de gris claro */
+            margin: 0; /* Elimina el margen predeterminado del cuerpo */
+            padding: 0; /* Elimina el relleno predeterminado del cuerpo */
+        }
+
+        /* Aplicar la fuente a h1 */
+        h1 {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #333, #ccc, #333);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            background-size: 200% 100%;
+            animation: slideBar 2s infinite linear;
+            margin: 0; /* Elimina el margen superior del h1 */
+        }
+
+        /* Definición de la animación */
+        @keyframes slideBar {
+            0% {
+                background-position: 100% 0;
+            }
+
+            100% {
+                background-position: -100% 0;
+            }
+        }
+
+        /* Estilo del botón Volver al Menú Principal */
+        .back-button {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        /* Cambia el color de fondo al pasar el ratón */
+        .back-button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Estilo para la sección de mods */
+        .mod-section {
+            max-width: 600px; /* Establece el ancho máximo de la sección de mods */
+            margin: 20px auto; /* Centra la sección horizontalmente y agrega un espacio superior e inferior */
+            background-color: white; /* Fondo blanco para la sección de mods */
+            padding: 20px; /* Añade relleno a la sección de mods */
+            border-radius: 10px; /* Bordes redondeados para un aspecto más agradable */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para resaltar la sección */
+            position: relative; /* Hace que sea un contenedor relativo para que el fondo se extienda */
+        }
+
+    .left-background {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 20px;
+        background: linear-gradient(to right, #dcdcdc, #333333);
+        border-right: 5px solid #f2f2f2; /* Ajusta el ancho y el color del borde */
+        }
+
+    .right-background {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 20px;
+        background: linear-gradient(to left, #dcdcdc, #333333);
+        border-left: 5px solid #f2f2f2; /* Ajusta el ancho y el color del borde */
+        }
+
+        /* Estilo del contenedor de cada mod */
+        .mod-list-item {
+            margin-bottom: 20px; /* Ajusta la separación entre cada elemento */
+            padding: 10px; /* Añade un relleno para separar el texto del borde */
+        }
+
+        /* Estilo de la imagen */
+        .mod-list-item img {
+            width: 100%; /* Ancho del 100% para ajustarse al contenedor */
+            height: auto; /* Mantiene la proporción original */
+            display: block; /* Elimina espacios en blanco debajo de la imagen */
+            margin-bottom: 10px; /* Espacio inferior */
+        }
+
+        /* Estilo del contenedor del video */
+        .video-container {
+            position: relative; /* Permite que el contenedor sea relativo para que el video sea absoluto a él */
+            padding-bottom: 56.25%; /* Proporción del video (9:16) */
+            height: 0; /* Altura inicial 0 para el padding-bottom */
+            overflow: hidden; /* Oculta cualquier desbordamiento */
+            margin-bottom: 10px; /* Espacio inferior */
+        }
+
+        /* Estilo del video */
+        .video-iframe {
+            position: absolute; /* Posición absoluta para llenar el contenedor */
+            top: 0;
+            left: 0;
+            width: 100%; /* Ancho del 100% para llenar el contenedor */
+            height: 100%; /* Altura del 100% para llenar el contenedor */
+        }
+
+        /* Estilo del botón de descarga */
+        .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        /* Cambia el color de fondo al pasar el ratón */
+        .download-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Botón Volver al Menú Principal -->
+    <a href="{{ url_for('index') }}" class="back-button">Volver al Menú Principal</a>
+
+    <!-- Encabezado TTT con animación -->
+    <h1>Mods para Dragon Ball Z: Tenkaichi Tag Team (TTT)</h1>
+
+    <!-- Sección de mods -->
+    <div class="mod-section">
+        <!-- Fondo lateral izquierdo -->
+        <div class="left-background"></div>
+
+        <!-- Mod 1 -->
+        <div class="mod-list-item">
+            <h2>Ultimate Gohan (Dragon Ball Super: Super Hero)</h2>
+            <p>Gohan con un nuevo ataque junto a Piccolo con su poder desatado!!!</p>
+            <!-- Uso de Flask para cargar la imagen desde la carpeta 'static' -->
+            <img src="{{ url_for('static', filename='UltimateGohanDBSSH.jpg') }}" alt="Imagen:">
+            <!-- Contenedor del video -->
+            <div class="video-container">
+                <!-- Agregar el iframe del video de YouTube -->
+                <iframe class="video-iframe" width="560" height="315"
+                    src="https://www.youtube.com/embed/9JApimev7Z4?rel=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <a href="https://exe.io/Utimate_Gohan_DBSSH" class="download-button">Descargar Mod</a>
+        </div>
+
+        <!-- Mod 2 -->
+        <div class="mod-list-item">
+            <h2>Goku Black Super Saiyan Rose</h2>
+            <p>Black Kamehameha con Zamasu como Extra Char</p>
+            <!-- Uso de Flask para cargar la imagen desde la carpeta 'static' -->
+            <img src="{{ url_for('static', filename='GokuBlack.png') }}" alt="Imagen:">
+            <!-- Contenedor del video -->
+            <div class="video-container">
+                <!-- Agregar el iframe del video de YouTube -->
+                <iframe class="video-iframe" width="560" height="315" src="https://www.youtube.com/embed/o6l1YFsMtb8"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+            <a href="https://exe.io/Goku_Black_Rose" class="download-button">Descargar Mod </a>
+        </div>
+
+        <!-- Fondo lateral derecho -->
+        <div class="right-background"></div>
+    </div>
+</body>
+
+</html>
